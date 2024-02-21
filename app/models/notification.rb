@@ -12,6 +12,7 @@
 #  account_id      :bigint(8)        not null
 #  from_account_id :bigint(8)        not null
 #  type            :string
+#  filtered        :boolean
 #
 
 class Notification < ApplicationRecord
@@ -98,8 +99,7 @@ class Notification < ApplicationRecord
 
       requested_types -= exclude_types.map(&:to_sym)
 
-      all.tap do |scope|
-        scope.merge!(where(from_account_id: from_account_id)) if from_account_id.present?
+      (from_account_id.present? ? where(from_account_id: from_account_id) : where(filtered: [nil, false])).tap do |scope|
         scope.merge!(where(type: requested_types)) unless requested_types.size == TYPES.size
       end
     end
