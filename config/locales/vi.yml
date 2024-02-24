@@ -753,6 +753,7 @@ vi:
         disabled: Không ai
         users: Để đăng nhập người cục bộ
       registrations:
+        moderation_recommandation: "!"
         preamble: Kiểm soát những ai có thể tạo tài khoản trên máy chủ của bạn.
         title: Đăng ký
       registrations_mode:
@@ -760,6 +761,7 @@ vi:
           approved: Yêu cầu phê duyệt để đăng ký
           none: Không ai có thể đăng ký
           open: Bất cứ ai cũng có thể đăng ký
+        warning_hint: "."
       security:
         authorized_fetch: Yêu cầu xác thực từ các máy chủ liên hợp
         authorized_fetch_hint: Yêu cầu xác thực từ các máy chủ liên hợp cho phép thực thi chặt chẽ hơn việc chặn cấp độ người dùng và cấp độ máy chủ. Tuy nhiên, điều này phải trả giá bằng một hình phạt về hiệu suất, làm giảm phạm vi tiếp cận của các lượt trả lời của bạn và có thể gây ra các vấn đề về khả năng tương thích với một số dịch vụ được liên hợp. Ngoài ra, điều này sẽ không ngăn cản các tác nhân chuyên dụng tìm nạp các tút và tài khoản công khai của bạn.
