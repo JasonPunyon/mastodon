@@ -240,11 +240,20 @@ module ApplicationHelper
     EmojiFormatter.new(html, custom_emojis, other_options.merge(animate: prefers_autoplay?)).to_s
   end
 
-  def site_icon_path(type, size = '48')
-    icon = SiteUpload.find_by(var: type)
-    return nil unless icon
+  def instance_presenter
+    @instance_presenter ||= InstancePresenter.new
+  end
 
-    icon.file.url(size)
+  def favicon_path(size = '48')
+    return nil unless instance_presenter.favicon
+
+    instance_presenter.favicon.file.url(size)
+  end
+
+  def app_icon_path(size = '48')
+    return nil unless instance_presenter.app_icon
+
+    instance_presenter.app_icon.file.url(size)
   end
 
   private
